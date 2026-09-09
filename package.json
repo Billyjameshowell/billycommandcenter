@@ -1,0 +1,12 @@
+{
+  "name": "billycommandcenter",
+  "private": true,
+  "type": "module",
+  "description": "Billy Command Center — static index of live sites",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
