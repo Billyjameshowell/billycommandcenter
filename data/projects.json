@@ -8,9 +8,13 @@
     "created": "2026-09-09",
     "updated": "2026-09-09",
     "dateSource": "github",
-    "stack": ["static HTML", "Node build script", "Cloudflare Pages"],
-    "status": "live",
-    "notes": "This index. Public repo. Domain listed as intended host; this PR does not buy domains or change DNS. Cloudflare Pages should serve repo-root HTML after `node scripts/build.mjs`.",
+    "stack": [
+      "static HTML",
+      "Node build script",
+      "Cloudflare Pages"
+    ],
+    "status": "dev",
+    "notes": "This index. Public repo. Domain listed as intended host; this PR does not buy domains or change DNS. billycommandcenter.com did not resolve on 2026-09-09 probe, so status is `dev` until Pages + DNS are attached. Cloudflare Pages should serve repo-root HTML after `node scripts/build.mjs`.",
     "extraLinks": []
   },
   {
@@ -22,8 +26,12 @@
     "created": "2026-08-19",
     "updated": "2026-08-29",
     "dateSource": "github",
-    "stack": ["Astro", "Cloudflare Worker", "GitHub"],
-    "status": "live",
+    "stack": [
+      "Astro",
+      "Cloudflare Worker",
+      "GitHub"
+    ],
+    "status": "shipped",
     "notes": "Booking / consulting site. Probed 200 on Cloudflare (Astro v7.2.4). Private repo `contactbilly` created 2026-08-19, pushed 2026-08-29. HTTP Last-Modified not exposed.",
     "extraLinks": []
   },
@@ -36,8 +44,13 @@
     "created": "2026-08-19",
     "updated": "2026-09-08",
     "dateSource": "github",
-    "stack": ["Astro", "GitHub", "Cloudflare Pages", "Porkbun"],
-    "status": "live",
+    "stack": [
+      "Astro",
+      "GitHub",
+      "Cloudflare Pages",
+      "Porkbun"
+    ],
+    "status": "shipped",
     "notes": "Photo-led trip zine. Probed 200 on Cloudflare Pages (Astro v7.2.4). Private repo created 2026-08-19, pushed 2026-09-08. HTTP Last-Modified not exposed.",
     "extraLinks": []
   },
@@ -50,8 +63,12 @@
     "created": "2026-08-26",
     "updated": "2026-08-26",
     "dateSource": "github",
-    "stack": ["static HTML", "Cloudflare Pages", "Porkbun"],
-    "status": "live",
+    "stack": [
+      "static HTML",
+      "Cloudflare Pages",
+      "Porkbun"
+    ],
+    "status": "shipped",
     "notes": "iOS app marketing site. Probed 200 on Cloudflare Pages (static HTML, no Astro generator tag). Private repo `weddingbellsapp` created/pushed 2026-08-26. Related Replit heritage repo `wedding-bells-replit` is not the live Pages source.",
     "extraLinks": []
   },
@@ -64,8 +81,12 @@
     "created": "2026-09-04",
     "updated": "2026-09-04",
     "dateSource": "http",
-    "stack": ["Astro", "GitHub Pages", "Porkbun"],
-    "status": "live",
+    "stack": [
+      "Astro",
+      "GitHub Pages",
+      "Porkbun"
+    ],
+    "status": "shipped",
     "notes": "Public repo `rogue-on-switch` created 2026-09-04, pushed 2026-09-04T23:44:12Z. HTTP Last-Modified Fri, 04 Sep 2026 23:44:40 GMT (used for last modified). Domain registered at Porkbun 2026-09-04. Served by GitHub Pages.",
     "extraLinks": []
   },
@@ -78,11 +99,21 @@
     "created": "2026-02-10",
     "updated": "2026-09-02",
     "dateSource": "github",
-    "stack": ["Next.js 16", "React 19", "Tailwind 4", "Supabase", "Amadeus", "Vercel"],
-    "status": "live",
-    "notes": "Public repo created 2026-02-10, pushed 2026-09-02. Homepage field is https://my-wedding-trips.vercel.app. Custom domain redirects apex → www and is live on Vercel. HTTP Last-Modified not exposed (Vercel/Next).",
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "Tailwind 4",
+      "Supabase",
+      "Amadeus",
+      "Vercel"
+    ],
+    "status": "dev",
+    "notes": "Public repo created 2026-02-10, pushed 2026-09-02. Homepage field is https://my-wedding-trips.vercel.app. Custom domain redirects apex \u2192 www and the marketing homepage loads on Vercel. Marked `dev` because auth is still messy. HTTP Last-Modified not exposed (Vercel/Next).",
     "extraLinks": [
-      { "label": "Vercel homepage", "url": "https://my-wedding-trips.vercel.app" }
+      {
+        "label": "Vercel homepage",
+        "url": "https://my-wedding-trips.vercel.app"
+      }
     ]
   },
   {
@@ -94,12 +125,21 @@
     "created": null,
     "updated": null,
     "dateSource": "unverified",
-    "stack": ["Next.js", "Fly.io"],
-    "status": "live",
-    "notes": "Live title: “0/52 — One photo per week”. Fly.io app (`oneper` / xzyp6ge.oneper.fly.dev and oneper.fly.dev). No public GitHub repo named 52grid (or oneper) under Billyjameshowell. Created/updated dates unverified — no GitHub `created_at`/`pushed_at` and no HTTP Last-Modified.",
+    "stack": [
+      "Next.js",
+      "Fly.io"
+    ],
+    "status": "shipped",
+    "notes": "Live title: \u201c0/52 \u2014 One photo per week\u201d. Fly.io app (`oneper` / xzyp6ge.oneper.fly.dev and oneper.fly.dev). No public GitHub repo named 52grid (or oneper) under Billyjameshowell. Created/updated dates unverified \u2014 no GitHub `created_at`/`pushed_at` and no HTTP Last-Modified.",
     "extraLinks": [
-      { "label": "Fly (oneper)", "url": "https://oneper.fly.dev" },
-      { "label": "Fly machine host", "url": "https://xzyp6ge.oneper.fly.dev" }
+      {
+        "label": "Fly (oneper)",
+        "url": "https://oneper.fly.dev"
+      },
+      {
+        "label": "Fly machine host",
+        "url": "https://xzyp6ge.oneper.fly.dev"
+      }
     ]
   },
   {
@@ -111,13 +151,48 @@
     "created": null,
     "updated": "2024-12-12",
     "dateSource": "http",
-    "stack": ["Vite", "React", "Fly.io"],
-    "status": "live",
-    "notes": "Live marketing SPA on Fly (`owex-labs.fly.dev`). HTTP Last-Modified Thu, 12 Dec 2024 00:35:19 GMT. Live source is NOT in GitHub. Older public repos (`owexlabs`, `owexlabs-website`) are leftover Astro landers, not this deploy. Preview brief is a separate Astro + Cloudflare Pages project.",
+    "stack": [
+      "Vite",
+      "React",
+      "Fly.io"
+    ],
+    "status": "shipped",
+    "notes": "Shipped but stale: live marketing SPA on Fly (`owex-labs.fly.dev`). HTTP Last-Modified Thu, 12 Dec 2024 00:35:19 GMT. Live source is NOT in GitHub. Older public repos (`owexlabs`, `owexlabs-website`) are leftover Astro landers, not this deploy. Monthly brief preview is a separate `dev` project (owexlabs-brief).",
     "extraLinks": [
-      { "label": "Fly app", "url": "https://owex-labs.fly.dev" },
-      { "label": "Monthly brief preview", "url": "https://owexlabs-brief.pages.dev" },
-      { "label": "Brief repo (private)", "url": "https://github.com/Billyjameshowell/owexlabs-brief" }
+      {
+        "label": "Fly app",
+        "url": "https://owex-labs.fly.dev"
+      },
+      {
+        "label": "Monthly brief preview",
+        "url": "https://owexlabs-brief.pages.dev"
+      },
+      {
+        "label": "Brief repo (private)",
+        "url": "https://github.com/Billyjameshowell/owexlabs-brief"
+      }
+    ]
+  },
+  {
+    "slug": "owexlabs-brief",
+    "name": "Owex Labs Brief",
+    "url": "https://owexlabs-brief.pages.dev",
+    "github": "https://github.com/Billyjameshowell/owexlabs-brief",
+    "githubPrivate": true,
+    "created": "2026-08-27",
+    "updated": "2026-08-29",
+    "dateSource": "github",
+    "stack": [
+      "Astro",
+      "Cloudflare Pages"
+    ],
+    "status": "dev",
+    "notes": "Preview marketing site for the Owex Labs monthly reporting brief. Private repo created 2026-08-27, pushed 2026-08-29. Not the live owexlabs.com Fly SPA. HTTP Last-Modified not exposed.",
+    "extraLinks": [
+      {
+        "label": "Live Owex Labs site",
+        "url": "https://owexlabs.com"
+      }
     ]
   },
   {
@@ -129,11 +204,17 @@
     "created": "2026-01-23",
     "updated": "2026-02-07",
     "dateSource": "github",
-    "stack": ["JavaScript", "Fly.io"],
-    "status": "live",
+    "stack": [
+      "JavaScript",
+      "Fly.io"
+    ],
+    "status": "shipped",
     "notes": "Private repo `movie-rankr` created 2026-01-23, pushed 2026-02-07. Fly host movie-rankr-xyz-client.fly.dev matches the custom domain. HTTP Last-Modified Thu, 08 Jan 2026 00:29:22 GMT is older than repo `created_at`, so GitHub dates are used for created/updated.",
     "extraLinks": [
-      { "label": "Fly client", "url": "https://movie-rankr-xyz-client.fly.dev" }
+      {
+        "label": "Fly client",
+        "url": "https://movie-rankr-xyz-client.fly.dev"
+      }
     ]
   },
   {
@@ -145,11 +226,17 @@
     "created": "2026-02-07",
     "updated": "2026-07-02",
     "dateSource": "github",
-    "stack": ["TypeScript", "Vercel"],
-    "status": "live",
-    "notes": "Head-to-head movie ranking. Custom domain and Vercel preview both return 200 with the same title. Private repo created 2026-02-07, pushed 2026-07-02. HTTP Last-Modified not exposed.",
+    "stack": [
+      "TypeScript",
+      "Vercel"
+    ],
+    "status": "dev",
+    "notes": "Head-to-head movie ranking. Custom domain rankflix.xyz and Vercel preview both return 200 with the same title. Marked `dev` (preview-era product, private repo). Private repo created 2026-02-07, pushed 2026-07-02. HTTP Last-Modified not exposed.",
     "extraLinks": [
-      { "label": "Vercel preview", "url": "https://rankflix-eight.vercel.app" }
+      {
+        "label": "Vercel preview",
+        "url": "https://rankflix-eight.vercel.app"
+      }
     ]
   },
   {
@@ -161,8 +248,13 @@
     "created": "2025-08-21",
     "updated": "2025-09-03",
     "dateSource": "mixed",
-    "stack": ["TypeScript", "Express", "Google Frontend", "Replit"],
-    "status": "live",
+    "stack": [
+      "TypeScript",
+      "Express",
+      "Google Frontend",
+      "Replit"
+    ],
+    "status": "shipped",
     "notes": "Student-athlete commitment graphics. Live headers: Google Frontend + Express. Replit heritage (`replit.com/@billyjhowell/CommitmentGraphics`). Private repo created 2025-08-21, last GitHub push 2025-08-21. HTTP Last-Modified Wed, 03 Sep 2025 02:53:28 GMT used for last modified.",
     "extraLinks": []
   },
@@ -175,9 +267,12 @@
     "created": null,
     "updated": null,
     "dateSource": "unverified",
-    "stack": ["Astro", "Netlify"],
-    "status": "live",
-    "notes": "DJ site. Reachable 200 on 2026-09-09. Title “LuchiniBlog”, generator Astro v2.1.6, host Netlify. No public GitHub repo named theluchini/luchini under Billyjameshowell. Created/updated dates unverified (no Last-Modified, no repo).",
+    "stack": [
+      "Astro",
+      "Netlify"
+    ],
+    "status": "shipped",
+    "notes": "DJ site. Reachable 200 on 2026-09-09. Title \u201cLuchiniBlog\u201d, generator Astro v2.1.6, host Netlify. No public GitHub repo named theluchini/luchini under Billyjameshowell. Created/updated dates unverified (no Last-Modified, no repo).",
     "extraLinks": []
   },
   {
@@ -189,11 +284,17 @@
     "created": "2024-12-10",
     "updated": "2024-12-18",
     "dateSource": "mixed",
-    "stack": ["JavaScript", "Fly.io"],
-    "status": "live",
+    "stack": [
+      "JavaScript",
+      "Fly.io"
+    ],
+    "status": "shipped",
     "notes": "Probed 200 on Fly. HTTP Last-Modified Wed, 18 Dec 2024 17:34:16 GMT (used for last modified). Private repos: `buzzboard` created 2024-12-10; `buzzboard-prod` created 2024-12-17 / pushed 2024-12-18.",
     "extraLinks": [
-      { "label": "buzzboard-prod (private)", "url": "https://github.com/Billyjameshowell/buzzboard-prod" }
+      {
+        "label": "buzzboard-prod (private)",
+        "url": "https://github.com/Billyjameshowell/buzzboard-prod"
+      }
     ]
   },
   {
@@ -205,8 +306,11 @@
     "created": null,
     "updated": null,
     "dateSource": "unverified",
-    "stack": ["beehiiv", "Cloudflare"],
-    "status": "live",
+    "stack": [
+      "beehiiv",
+      "Cloudflare"
+    ],
+    "status": "shipped",
     "notes": "Earlier probe reported Cloudflare 403; reachable 200 on 2026-09-09 (beehiiv / Orchid HTML, Cloudflare). Collecting-news newsletter. No public GitHub repo found. Created/updated dates unverified.",
     "extraLinks": []
   },
@@ -219,9 +323,12 @@
     "created": "2025-03-05",
     "updated": "2025-03-05",
     "dateSource": "http",
-    "stack": ["Astro", "Fly.io"],
-    "status": "live",
-    "notes": "Public repo `newsletter-brandkit` (Astro + fly.toml) created/pushed 2025-03-05. Live title “LocalBrand AI”. HTTP Last-Modified Wed, 05 Mar 2025 18:03:44 GMT matches the GitHub push window.",
+    "stack": [
+      "Astro",
+      "Fly.io"
+    ],
+    "status": "shipped",
+    "notes": "Public repo `newsletter-brandkit` (Astro + fly.toml) created/pushed 2025-03-05. Live title \u201cLocalBrand AI\u201d. HTTP Last-Modified Wed, 05 Mar 2025 18:03:44 GMT matches the GitHub push window.",
     "extraLinks": []
   },
   {
@@ -233,8 +340,13 @@
     "created": null,
     "updated": "2025-03-14",
     "dateSource": "http",
-    "stack": ["Vite", "React", "Express", "Google Frontend"],
-    "status": "live",
+    "stack": [
+      "Vite",
+      "React",
+      "Express",
+      "Google Frontend"
+    ],
+    "status": "shipped",
     "notes": "Probed 200. Headers: Google Frontend + `x-powered-by: Express`. HTML is a Vite-built SPA (`/assets/index-*.js`). HTTP Last-Modified Fri, 14 Mar 2025 17:43:48 GMT. No GitHub repo named generate-recipes found. Created date unverified.",
     "extraLinks": []
   },
@@ -247,9 +359,12 @@
     "created": "2026-07-02",
     "updated": "2026-07-02",
     "dateSource": "github",
-    "stack": ["beehiiv", "Cloudflare"],
-    "status": "live",
-    "notes": "Live site is beehiiv (Orchid) behind Cloudflare; apex 301 → www. GitHub dates are for the private ops/coordination repo `arlington-bagel-agent-ops` (Slack, Airtable, Hermes, Codex, beehiiv) — not necessarily the publication itself. Namecheap expiry noise has been observed on the domain; treat registrar status as unverified here. HTTP Last-Modified not exposed.",
+    "stack": [
+      "beehiiv",
+      "Cloudflare"
+    ],
+    "status": "shipped",
+    "notes": "Live site is beehiiv (Orchid) behind Cloudflare; apex 301 \u2192 www. GitHub dates are for the private ops/coordination repo `arlington-bagel-agent-ops` (Slack, Airtable, Hermes, Codex, beehiiv) \u2014 not necessarily the publication itself. Namecheap expiry noise has been observed on the domain; treat registrar status as unverified here. HTTP Last-Modified not exposed.",
     "extraLinks": []
   },
   {
@@ -261,9 +376,12 @@
     "created": null,
     "updated": null,
     "dateSource": "unverified",
-    "stack": ["beehiiv", "Cloudflare"],
-    "status": "live",
-    "notes": "Probed 200. beehiiv (Orchid) behind Cloudflare; apex 301 → www. No matching GitHub repo found. Created/updated dates unverified.",
+    "stack": [
+      "beehiiv",
+      "Cloudflare"
+    ],
+    "status": "shipped",
+    "notes": "Probed 200. beehiiv (Orchid) behind Cloudflare; apex 301 \u2192 www. No matching GitHub repo found. Created/updated dates unverified.",
     "extraLinks": []
   },
   {
@@ -275,8 +393,12 @@
     "created": "2016-07-20",
     "updated": "2025-06-30",
     "dateSource": "http",
-    "stack": ["HTML", "CSS", "GitHub Pages"],
-    "status": "live",
+    "stack": [
+      "HTML",
+      "CSS",
+      "GitHub Pages"
+    ],
+    "status": "shipped",
     "notes": "Classic user Pages site. Public repo created 2016-07-20, last GitHub push 2025-07-01. HTTP Last-Modified Mon, 30 Jun 2025 22:51:08 GMT used for last modified. Static HTML/CSS (Poppins), not a framework app.",
     "extraLinks": []
   },
@@ -289,9 +411,12 @@
     "created": "2026-09-05",
     "updated": "2026-09-05",
     "dateSource": "github",
-    "stack": ["Astro", "Cloudflare Pages"],
-    "status": "staging",
-    "notes": "Staging-only marketing rewrite. Private repo created/pushed 2026-09-05. Pages preview is noindex. Do not treat crozettrolley.com as this project — that hostname is a separate live WordPress site behind Sucuri, not this Astro build.",
+    "stack": [
+      "Astro",
+      "Cloudflare Pages"
+    ],
+    "status": "dev",
+    "notes": "Staging-only marketing rewrite \u2014 status `dev`, not `broken`. Private repo created/pushed 2026-09-05. Pages preview is noindex. Do not treat crozettrolley.com as this project \u2014 that hostname is a separate live WordPress site behind Sucuri (Peek was reported broken separately). This Astro build is only https://crozet-trolley.pages.dev.",
     "extraLinks": []
   },
   {
@@ -303,9 +428,11 @@
     "created": "2026-09-09",
     "updated": "2026-09-09",
     "dateSource": "github",
-    "stack": ["TypeScript"],
-    "status": "tool",
-    "notes": "Season ticket book (sit/sell, advised asks, listed/sold). Private repo `wizards-107p`. No public URL found — listed as a tool/repo, not a live site.",
+    "stack": [
+      "TypeScript"
+    ],
+    "status": "dev",
+    "notes": "Season ticket book (sit/sell, advised asks, listed/sold). Private repo `wizards-107p`. No public URL found \u2014 `dev` tool/repo, not a shipped site.",
     "extraLinks": []
   }
 ]

@@ -15,7 +15,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "data", "projects.json");
 const PROJECTS_DIR = join(ROOT, "projects");
-const STATUSES = ["live", "staging", "tool", "parking"];
+const STATUSES = ["shipped", "dev", "broken"];
 const STATUS_RANK = Object.fromEntries(STATUSES.map((s, i) => [s, i]));
 const DATE_SOURCE_LABEL = {
   github: "GitHub API",
@@ -134,7 +134,7 @@ function layout({ title, description, extraHead = "", bodyClass = "", main }) {
           <h1>Command center</h1>
         </div>
       </div>
-      <p class="lede">Personal inventory of live sites, staging previews, and tools. Dates prefer GitHub <code>created_at</code>/<code>pushed_at</code> when HTTP <code>Last-Modified</code> is missing.</p>
+      <p class="lede">Personal inventory of sites and tools. Status is <code>shipped</code>, <code>dev</code>, or <code>broken</code>. Dates prefer GitHub <code>created_at</code>/<code>pushed_at</code> when HTTP <code>Last-Modified</code> is missing.</p>
     </header>
     <main id="main">
 ${main}

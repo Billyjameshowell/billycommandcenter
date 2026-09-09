@@ -8,10 +8,9 @@
   --accent: #c6e04a;
   --accent-dim: #8aa32a;
   --warn: #e6b84d;
-  --live: #7dcc6a;
-  --staging: #e6b84d;
-  --tool: #7aa7c7;
-  --parking: #8b9586;
+  --shipped: #7dcc6a;
+  --dev: #e6b84d;
+  --broken: #e05d4c;
   --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
   --sans: "Segoe UI", system-ui, -apple-system, sans-serif;
 }
@@ -204,10 +203,9 @@ h1 { font-size: 1.7rem; }
   border: 1px solid currentColor;
   text-transform: uppercase;
 }
-.badge-live { color: var(--live); }
-.badge-staging { color: var(--staging); }
-.badge-tool { color: var(--tool); }
-.badge-parking { color: var(--parking); }
+.badge-shipped { color: var(--shipped); }
+.badge-dev { color: var(--dev); }
+.badge-broken { color: var(--broken); }
 
 .lock {
   font-family: var(--mono);

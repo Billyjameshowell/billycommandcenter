@@ -33,13 +33,13 @@ Not Astro. HTML is emitted at the **repo root** so Pages can serve the files as-
   "updated": "2026-08-29",
   "dateSource": "github",
   "stack": ["Astro", "Cloudflare Worker", "GitHub"],
-  "status": "live",
+  "status": "shipped",
   "notes": "…",
   "extraLinks": [{ "label": "Preview", "url": "https://example.pages.dev" }]
 }
 ```
 
-- `status`: `live` | `staging` | `tool` | `parking`
+- `status`: `shipped` | `dev` | `broken` (badge on index + detail; shipped green, dev amber, broken red)
 - `dateSource`: `github` | `http` | `mixed` | `unverified`
 - `url` / `github` / `created` / `updated` may be `null` when unknown
 - Dates are `YYYY-MM-DD` (UTC calendar day)
@@ -89,5 +89,5 @@ Notes for that Action:
 
 - Use a fine-scoped token that can read **private** tracked repos (`contactbilly`, `billyzine`, etc.)
 - Respect GitHub rate limits; skip junk/templates/sandboxes
-- Do not treat `crozettrolley.com` as the Crozet Trolley staging project
+- Do not treat `crozettrolley.com` as the Crozet Trolley `dev` project; do not mark that staging preview `broken`
 - HTTP `Last-Modified` can be older than `created_at` (see movieRankr); keep the policy in the JSON notes when that happens
