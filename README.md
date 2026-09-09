@@ -2,11 +2,11 @@
 
 Public index of Billy’s live sites: URLs, GitHub, created/modified dates, status, and per-project stack notes.
 
+**This is not Astro.** There is no framework. The site is **static HTML + CSS**. A small Node script (`scripts/build.mjs`) reads `data/projects.json` and writes `index.html` plus `projects/<slug>.html`. Client filter/sort lives in `inventory.js`. Cloudflare Pages serves those files as-is from the repo root.
+
 - **Domain:** [billycommandcenter.com](https://billycommandcenter.com) (connect in Cloudflare Pages; this repo does not change DNS)
 - **Host:** Cloudflare Pages
-- **Stack:** static HTML + CSS generated from `data/projects.json` by a small Node script
-
-Not Astro. HTML is emitted at the **repo root** so Pages can serve the files as-is.
+- **Stack:** static HTML + CSS generated from `data/projects.json` via `node scripts/build.mjs`
 
 ## Layout
 
@@ -14,11 +14,17 @@ Not Astro. HTML is emitted at the **repo root** so Pages can serve the files as-
 | --- | --- |
 | `data/projects.json` | Source of truth (array of project objects) |
 | `scripts/build.mjs` | Reads JSON, writes `index.html` and `projects/<slug>.html` |
-| `styles.css` | Shared dark command-center stylesheet |
+| `styles.css` | Shared plain light stylesheet |
+| `inventory.js` | Client filter + sort for the index (table and cards) |
 | `index.html` | Inventory (table on desktop, cards on mobile) |
 | `projects/<slug>.html` | Detail page: full stack, notes, links |
 
 **Do not edit the HTML by hand.** Change JSON, then rebuild.
+
+Index controls (client-only, no rebuild):
+
+- **Status filters** (`all` / `shipped` / `dev` / `broken`) show and hide matching table rows **and** mobile cards, update the visible count, and keep the active button marked.
+- **Sort** (`Title`, `Created`, `Modified`) reorders both lists. First click uses A–Z or newest; click again to flip direction. **Clear** restores the default build order. Active sort is stored in `localStorage`.
 
 ## Project object
 

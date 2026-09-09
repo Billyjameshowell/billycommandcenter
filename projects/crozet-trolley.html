@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Crozet Trolley (staging) · Billy Command Center</title>
   <meta name="description" content="Staging-only marketing rewrite — status `dev`, not `broken`. Private repo created/pushed 2026-09-05. Pages preview is noindex. Do not treat crozettrolley.com as this project — that hostname is a separate live WordPress site behind Sucuri (Peek was reported broken separately). This Astro build is only https://crozet-trolley.pages.dev.">
-  <meta name="theme-color" content="#0b0e0c">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
   <link rel="canonical" href="/projects/crozet-trolley.html">
@@ -14,17 +14,10 @@
   <a class="skip" href="#main">Skip to inventory</a>
   <div class="shell">
     <header class="top">
-      <div class="brand">
-        <a href="/" class="mark" aria-label="Billy Command Center home">
-          <span class="mark-dot" aria-hidden="true"></span>
-          BCC
-        </a>
-        <div class="brand-copy">
-          <p class="kicker">billycommandcenter.com</p>
-          <h1>Command center</h1>
-        </div>
-      </div>
-      <p class="lede">Personal inventory of sites and tools. Status is <code>shipped</code>, <code>dev</code>, or <code>broken</code>. Dates prefer GitHub <code>created_at</code>/<code>pushed_at</code> when HTTP <code>Last-Modified</code> is missing.</p>
+      <p class="brand"><a href="/">Billy Command Center</a></p>
+      <p class="kicker">billycommandcenter.com</p>
+      <h1>Site inventory</h1>
+      <p class="lede">Personal index of sites and tools. Status is <code>shipped</code>, <code>dev</code>, or <code>broken</code>. Dates prefer GitHub <code>created_at</code>/<code>pushed_at</code> when HTTP <code>Last-Modified</code> is missing.</p>
     </header>
     <main id="main">
       <nav class="crumb"><a href="/">← Inventory</a></nav>
@@ -69,7 +62,7 @@
       </article>
     </main>
     <footer class="foot">
-      <p>Generated from <code>data/projects.json</code> by <code>scripts/build.mjs</code>. Do not edit HTML by hand.</p>
+      <p>Not Astro. Static HTML + CSS generated from <code>data/projects.json</code> by <code>scripts/build.mjs</code>. Do not edit HTML by hand.</p>
       <p><a href="https://github.com/Billyjameshowell/billycommandcenter">Source</a> · Cloudflare Pages · public</p>
     </footer>
   </div>
