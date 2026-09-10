@@ -4,7 +4,8 @@
   "type": "module",
   "description": "Billy Command Center — static index of live sites",
   "scripts": {
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check-inventory.mjs"
   },
   "engines": {
     "node": ">=18"
