@@ -115,7 +115,7 @@ function layout({ title, description, extraHead = "", bodyClass = "", main }) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
-  <meta name="theme-color" content="#0b0e0c">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
   ${extraHead}
@@ -124,23 +124,16 @@ function layout({ title, description, extraHead = "", bodyClass = "", main }) {
   <a class="skip" href="#main">Skip to inventory</a>
   <div class="shell">
     <header class="top">
-      <div class="brand">
-        <a href="/" class="mark" aria-label="Billy Command Center home">
-          <span class="mark-dot" aria-hidden="true"></span>
-          BCC
-        </a>
-        <div class="brand-copy">
-          <p class="kicker">billycommandcenter.com</p>
-          <h1>Command center</h1>
-        </div>
-      </div>
-      <p class="lede">Personal inventory of sites and tools. Status is <code>shipped</code>, <code>dev</code>, or <code>broken</code>. Dates prefer GitHub <code>created_at</code>/<code>pushed_at</code> when HTTP <code>Last-Modified</code> is missing.</p>
+      <p class="brand"><a href="/">Billy Command Center</a></p>
+      <p class="kicker">billycommandcenter.com</p>
+      <h1>Site inventory</h1>
+      <p class="lede">Personal index of sites and tools. Status is <code>shipped</code>, <code>dev</code>, or <code>broken</code>. Dates prefer GitHub <code>created_at</code>/<code>pushed_at</code> when HTTP <code>Last-Modified</code> is missing.</p>
     </header>
     <main id="main">
 ${main}
     </main>
     <footer class="foot">
-      <p>Generated from <code>data/projects.json</code> by <code>scripts/build.mjs</code>. Do not edit HTML by hand.</p>
+      <p>Not Astro. Static HTML + CSS generated from <code>data/projects.json</code> by <code>scripts/build.mjs</code>. Do not edit HTML by hand.</p>
       <p><a href="https://github.com/Billyjameshowell/billycommandcenter">Source</a> · Cloudflare Pages · public</p>
     </footer>
   </div>
@@ -149,18 +142,30 @@ ${main}
 `;
 }
 
+function itemAttrs(p, index) {
+  return [
+    `data-item`,
+    `data-slug="${esc(p.slug)}"`,
+    `data-status="${esc(p.status)}"`,
+    `data-title="${esc(p.name)}"`,
+    `data-created="${esc(p.created || "")}"`,
+    `data-modified="${esc(p.updated || "")}"`,
+    `data-index="${index}"`,
+  ].join(" ");
+}
+
 function renderIndex(projects) {
   const sorted = sortProjects(projects);
   const c = counts(projects);
   const rows = sorted
-    .map((p) => {
+    .map((p, i) => {
       const live = p.url
         ? `<a href="${esc(p.url)}" rel="noopener">${esc(hostLabel(p.url))}</a>`
         : `<span class="muted">no public URL</span>`;
       const gh = p.github
         ? `<a href="${esc(p.github)}" rel="noopener">${esc(githubLabel(p.github))}${p.githubPrivate ? ` <span class="lock" title="private repo">priv</span>` : ""}</a>`
         : `<span class="muted">—</span>`;
-      return `<tr data-status="${esc(p.status)}">
+      return `<tr ${itemAttrs(p, i)}>
   <td class="col-name"><a href="/projects/${esc(p.slug)}.html">${esc(p.name)}</a></td>
   <td class="col-status">${statusBadge(p.status)}</td>
   <td class="col-url">${live}</td>
@@ -174,14 +179,14 @@ function renderIndex(projects) {
     .join("\n");
 
   const cards = sorted
-    .map((p) => {
+    .map((p, i) => {
       const live = p.url
         ? `<a href="${esc(p.url)}" rel="noopener">${esc(hostLabel(p.url))}</a>`
         : `<span class="muted">no public URL</span>`;
       const gh = p.github
         ? `<a href="${esc(p.github)}" rel="noopener">${esc(githubLabel(p.github))}</a>${p.githubPrivate ? ` <span class="lock">priv</span>` : ""}`
         : `<span class="muted">no GitHub</span>`;
-      return `<article class="card" data-status="${esc(p.status)}">
+      return `<article class="card" ${itemAttrs(p, i)}>
   <header>
     <h2><a href="/projects/${esc(p.slug)}.html">${esc(p.name)}</a></h2>
     ${statusBadge(p.status)}
@@ -204,14 +209,26 @@ function renderIndex(projects) {
   ]
     .map(
       ([key, n], i) =>
-        `<button type="button" class="filter${i === 0 ? " is-on" : ""}" data-filter="${key}">${esc(key)} <span>${n}</span></button>`,
+        `<button type="button" class="filter${i === 0 ? " is-on" : ""}" data-filter="${key}" aria-pressed="${i === 0 ? "true" : "false"}">${esc(key)} <span>${n}</span></button>`,
     )
     .join("\n");
 
-  const main = `      <section class="panel">
+  const main = `      <section class="panel" data-inventory>
         <div class="panel-head">
-          <h2>Inventory <span class="count">${c.all}</span></h2>
-          <div class="filters" role="toolbar" aria-label="Filter by status">${filters}</div>
+          <h2>Inventory <span class="count" data-count>${c.all}</span></h2>
+        </div>
+        <div class="controls">
+          <div class="filters" role="toolbar" aria-label="Filter by status">
+            <span class="ctrl-label">Status</span>
+${filters}
+          </div>
+          <div class="sorts" role="toolbar" aria-label="Sort inventory">
+            <span class="ctrl-label">Sort</span>
+            <button type="button" class="sort" data-sort="title" aria-pressed="false">Title<span data-sort-dir></span></button>
+            <button type="button" class="sort" data-sort="created" aria-pressed="false">Created<span data-sort-dir></span></button>
+            <button type="button" class="sort" data-sort="modified" aria-pressed="false">Modified<span data-sort-dir></span></button>
+            <button type="button" class="sort-clear" data-sort-clear hidden>Clear</button>
+          </div>
         </div>
         <div class="table-wrap">
           <table class="grid">
@@ -227,35 +244,21 @@ function renderIndex(projects) {
                 <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody data-rows>
 ${rows}
             </tbody>
           </table>
         </div>
-        <div class="cards">
+        <div class="cards" data-cards>
 ${cards}
         </div>
-      </section>
-      <script>
-        (function () {
-          var buttons = document.querySelectorAll("[data-filter]");
-          var rows = document.querySelectorAll("[data-status]");
-          buttons.forEach(function (btn) {
-            btn.addEventListener("click", function () {
-              var f = btn.getAttribute("data-filter");
-              buttons.forEach(function (b) { b.classList.toggle("is-on", b === btn); });
-              rows.forEach(function (el) {
-                el.hidden = f !== "all" && el.getAttribute("data-status") !== f;
-              });
-            });
-          });
-        })();
-      </script>`;
+      </section>`;
 
   return layout({
     title: "Billy Command Center",
     description: "Index of Billy’s live sites, GitHub repos, dates, and stacks.",
     bodyClass: "page-index",
+    extraHead: `<script src="/inventory.js" defer></script>`,
     main,
   });
 }
