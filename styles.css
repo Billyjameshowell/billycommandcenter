@@ -114,7 +114,7 @@ h1 { font-size: 1.6rem; }
 .filter.is-on,
 .sort.is-on {
   border-color: #1a1a1a;
-  background: #f0f0f0;
+  background: #e6e6e6;
   font-weight: 600;
 }
 .filter:hover,
@@ -147,6 +147,8 @@ h1 { font-size: 1.6rem; }
 }
 .col-name a { color: inherit; font-weight: 600; }
 .col-date { white-space: nowrap; color: #555; }
+.col-stack { white-space: nowrap; min-width: 12rem; }
+.col-stack .chip { margin-bottom: 0; }
 
 .cards { display: none; }
 

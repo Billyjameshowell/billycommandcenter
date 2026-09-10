@@ -48,19 +48,15 @@
     }
     var av = attr(a, state.sort);
     var bv = attr(b, state.sort);
-    var cmp;
     if (state.sort === "title") {
-      cmp = av.localeCompare(bv);
-    } else if (!av && !bv) {
-      cmp = 0;
-    } else if (!av) {
-      cmp = 1;
-    } else if (!bv) {
-      cmp = -1;
-    } else {
-      cmp = av.localeCompare(bv);
+      var titleCmp = av.localeCompare(bv);
+      return state.dir === "desc" ? -titleCmp : titleCmp;
     }
-    return state.dir === "desc" ? -cmp : cmp;
+    if (!av && !bv) return 0;
+    if (!av) return 1;
+    if (!bv) return -1;
+    var dateCmp = av.localeCompare(bv);
+    return state.dir === "desc" ? -dateCmp : dateCmp;
   }
 
   function applyFilter() {
