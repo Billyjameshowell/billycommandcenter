@@ -6,15 +6,15 @@
     "github": "https://github.com/Billyjameshowell/billycommandcenter",
     "githubPrivate": false,
     "created": "2026-09-09",
-    "updated": "2026-09-09",
+    "updated": "2026-09-24",
     "dateSource": "github",
     "stack": [
       "static HTML",
       "Node build script",
       "Cloudflare Pages"
     ],
-    "status": "dev",
-    "notes": "This index. Public repo. Domain listed as intended host; this PR does not buy domains or change DNS. billycommandcenter.com did not resolve on 2026-09-09 probe, so status is `dev` until Pages + DNS are attached. Cloudflare Pages should serve repo-root HTML after `node scripts/build.mjs`.",
+    "status": "shipped",
+    "notes": "This index. Public repo. Live on CF Pages (probed 200). Cloudflare Pages serves repo-root HTML after node scripts/build.mjs.",
     "extraLinks": []
   },
   {
@@ -108,7 +108,7 @@
       "Vercel"
     ],
     "status": "dev",
-    "notes": "Public repo created 2026-02-10, pushed 2026-09-02. Homepage field is https://my-wedding-trips.vercel.app. Custom domain redirects apex \u2192 www and the marketing homepage loads on Vercel. Marked `dev` because auth is still messy. HTTP Last-Modified not exposed (Vercel/Next).",
+    "notes": "Public repo created 2026-02-10, pushed 2026-09-02. Homepage field is https://my-wedding-trips.vercel.app. Custom domain redirects apex \u2192 www and the marketing homepage loads on Vercel. Probed 200 on 2026-09-24 (apex \u2192 www). Status stays dev because auth is still messy. HTTP Last-Modified not exposed (Vercel/Next).",
     "extraLinks": [
       {
         "label": "Vercel homepage",
@@ -146,8 +146,8 @@
     "slug": "owexlabs",
     "name": "Owex Labs",
     "url": "https://owexlabs.com",
-    "github": null,
-    "githubPrivate": null,
+    "github": "https://github.com/Billyjameshowell/owexlabs",
+    "githubPrivate": false,
     "created": null,
     "updated": "2024-12-12",
     "dateSource": "http",
@@ -157,7 +157,7 @@
       "Fly.io"
     ],
     "status": "shipped",
-    "notes": "Shipped but stale: live marketing SPA on Fly (`owex-labs.fly.dev`). HTTP Last-Modified Thu, 12 Dec 2024 00:35:19 GMT. Live source is NOT in GitHub. Older public repos (`owexlabs`, `owexlabs-website`) are leftover Astro landers, not this deploy. Monthly brief preview is a separate `dev` project (owexlabs-brief).",
+    "notes": "Shipped but stale: live marketing SPA on Fly (owex-labs.fly.dev). HTTP Last-Modified Thu, 12 Dec 2024 00:35:19 GMT. Linked public repo owexlabs is an older Astro lander (created 2023-09-21), not this Fly deploy. Monthly brief preview is a separate dev project (owexlabs-brief).",
     "extraLinks": [
       {
         "label": "Fly app",
@@ -311,7 +311,7 @@
       "Cloudflare"
     ],
     "status": "shipped",
-    "notes": "Earlier probe reported Cloudflare 403; reachable 200 on 2026-09-09 (beehiiv / Orchid HTML, Cloudflare). Collecting-news newsletter. No public GitHub repo found. Created/updated dates unverified.",
+    "notes": "Probed 200 on 2026-09-24 with a browser user-agent (bare curl often 403). beehiiv / Orchid HTML behind Cloudflare. Collecting-news newsletter. No public GitHub repo found. Created/updated dates unverified.",
     "extraLinks": []
   },
   {
@@ -364,7 +364,7 @@
       "Cloudflare"
     ],
     "status": "shipped",
-    "notes": "Live site is beehiiv (Orchid) behind Cloudflare; apex 301 \u2192 www. GitHub dates are for the private ops/coordination repo `arlington-bagel-agent-ops` (Slack, Airtable, Hermes, Codex, beehiiv) \u2014 not necessarily the publication itself. Namecheap expiry noise has been observed on the domain; treat registrar status as unverified here. HTTP Last-Modified not exposed.",
+    "notes": "Probed 200 on 2026-09-24 with a browser user-agent (apex \u2192 www). Live site is beehiiv (Orchid) behind Cloudflare. GitHub dates are for the private ops/coordination repo arlington-bagel-agent-ops (Slack, Airtable, Hermes, Codex, beehiiv) \u2014 not necessarily the publication itself. Namecheap expiry noise has been observed on the domain; treat registrar status as unverified here. HTTP Last-Modified not exposed.",
     "extraLinks": []
   },
   {
@@ -381,7 +381,7 @@
       "Cloudflare"
     ],
     "status": "shipped",
-    "notes": "Probed 200. beehiiv (Orchid) behind Cloudflare; apex 301 \u2192 www. No matching GitHub repo found. Created/updated dates unverified.",
+    "notes": "Probed 200 on 2026-09-24 with a browser user-agent (apex \u2192 www). beehiiv (Orchid) behind Cloudflare. No matching GitHub repo found. Created/updated dates unverified.",
     "extraLinks": []
   },
   {
@@ -416,23 +416,60 @@
       "Cloudflare Pages"
     ],
     "status": "dev",
-    "notes": "Staging-only marketing rewrite \u2014 status `dev`, not `broken`. Private repo created/pushed 2026-09-05. Pages preview is noindex. Do not treat crozettrolley.com as this project \u2014 that hostname is a separate live WordPress site behind Sucuri (Peek was reported broken separately). This Astro build is only https://crozet-trolley.pages.dev.",
-    "extraLinks": []
+    "notes": "Staging Astro rebuild on Cloudflare Pages. Status dev. Private repo created/pushed 2026-09-05. Probed 200 on 2026-09-24 at https://crozet-trolley.pages.dev. crozettrolley.com is legacy WordPress (Sucuri), not this Astro rebuild \u2014 do not use it as the primary URL.",
+    "extraLinks": [
+      {
+        "label": "Legacy WordPress (Sucuri)",
+        "url": "https://crozettrolley.com"
+      }
+    ]
   },
   {
     "slug": "wizards-107p",
     "name": "Wizards 107P",
     "url": null,
-    "github": "https://github.com/Billyjameshowell/wizards-107p",
-    "githubPrivate": true,
-    "created": "2026-09-09",
-    "updated": "2026-09-09",
+    "github": "https://github.com/Billyjameshowell/wizards-107p-cf",
+    "githubPrivate": false,
+    "created": "2026-09-11",
+    "updated": "2026-09-22",
     "dateSource": "github",
     "stack": [
-      "TypeScript"
+      "TypeScript",
+      "React",
+      "Vite",
+      "Cloudflare Workers",
+      "Cloudflare D1"
     ],
     "status": "dev",
-    "notes": "Season ticket book (sit/sell, advised asks, listed/sold). Private repo `wizards-107p`. No public URL found \u2014 `dev` tool/repo, not a shipped site.",
+    "notes": "Season ticket book (sit/sell, advised asks, listed/sold). Primary public repo wizards-107p-cf created 2026-09-11, pushed 2026-09-22. No custom domain: pages.dev variants were DNS NXDOMAIN on the 2026-09-24 probe, so the primary URL stays empty. Workers preview returned 200. Legacy private repo wizards-107p is under more links. Status dev.",
+    "extraLinks": [
+      {
+        "label": "Workers preview",
+        "url": "https://wizards-107p-cf.dfm7gb44c6.workers.dev"
+      },
+      {
+        "label": "Legacy repo (private)",
+        "url": "https://github.com/Billyjameshowell/wizards-107p"
+      }
+    ]
+  },
+  {
+    "slug": "trip-guide",
+    "name": "Trip Guide",
+    "url": "https://trip-guide-a1c.pages.dev",
+    "github": "https://github.com/Billyjameshowell/trip-guide",
+    "githubPrivate": false,
+    "created": "2026-09-09",
+    "updated": "2026-09-16",
+    "dateSource": "github",
+    "stack": [
+      "static HTML",
+      "CSS",
+      "JavaScript",
+      "Cloudflare Pages"
+    ],
+    "status": "dev",
+    "notes": "Custom travel guide (cities, neighborhoods, bars, food, and sights). Public repo created 2026-09-09, pushed 2026-09-16. Plain HTML/CSS/JS on Cloudflare Pages. Probed 2026-09-24: Cloudflare Access still on \u2014 302 to billy-zt. Not public yet, so status stays dev.",
     "extraLinks": []
   }
 ]
