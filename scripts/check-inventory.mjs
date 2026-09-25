@@ -47,8 +47,8 @@ function attrs(chunk) {
 }
 const rows = [...html.matchAll(rowRe)].map((m) => attrs(m[1]));
 const cards = [...html.matchAll(cardRe)].map((m) => attrs(m[1]));
-assert.equal(rows.length, 23);
-assert.equal(cards.length, 23);
+assert.equal(rows.length, 24);
+assert.equal(cards.length, 24);
 assert.deepEqual(
   rows.map((r) => r.slug),
   cards.map((c) => c.slug),
@@ -61,9 +61,9 @@ for (const item of rows) {
 const shipped = rows.filter((r) => r.status === "shipped").length;
 const dev = rows.filter((r) => r.status === "dev").length;
 const broken = rows.filter((r) => r.status === "broken").length;
-assert.equal(shipped + dev + broken, 23);
+assert.equal(shipped + dev + broken, 24);
 assert.equal(dev, 6);
-assert.equal(shipped, 17);
+assert.equal(shipped, 18);
 
 function sortBy(list, key, dir) {
   return [...list].sort((a, b) => {
