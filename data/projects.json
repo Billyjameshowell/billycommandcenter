@@ -6,7 +6,7 @@
     "github": "https://github.com/Billyjameshowell/billycommandcenter",
     "githubPrivate": false,
     "created": "2026-09-09",
-    "updated": "2026-09-24",
+    "updated": "2026-09-25",
     "dateSource": "github",
     "stack": [
       "static HTML",
@@ -400,6 +400,24 @@
     ],
     "status": "shipped",
     "notes": "Classic user Pages site. Public repo created 2016-07-20, last GitHub push 2025-07-01. HTTP Last-Modified Mon, 30 Jun 2025 22:51:08 GMT used for last modified. Static HTML/CSS (Poppins), not a framework app.",
+    "extraLinks": []
+  },
+  {
+    "slug": "openrouter-model-quiz",
+    "name": "OpenRouter Model Quiz",
+    "url": "https://billyjameshowell.github.io/openrouter-model-quiz/",
+    "github": "https://github.com/Billyjameshowell/openrouter-model-quiz",
+    "githubPrivate": false,
+    "created": "2026-09-24",
+    "updated": "2026-09-25",
+    "dateSource": "http",
+    "stack": [
+      "Vite SPA",
+      "static",
+      "GitHub Pages"
+    ],
+    "status": "shipped",
+    "notes": "3-life streak quiz from the live OpenRouter catalog; learn cards after each answer; localStorage leaderboard; Wordle-style share on game over. No custom domain yet (GitHub Pages only). Public repo created 2026-09-24T16:00:24Z, pushed 2026-09-25T11:03:07Z. HTTP Last-Modified Fri, 25 Sep 2026 11:03:28 GMT (used for last modified). Probed 200.",
     "extraLinks": []
   },
   {
