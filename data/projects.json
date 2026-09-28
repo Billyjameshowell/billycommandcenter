@@ -445,11 +445,11 @@
   {
     "slug": "wizards-107p",
     "name": "Wizards 107P",
-    "url": null,
+    "url": "https://wizards-107p-cf.dfm7gb44c6.workers.dev",
     "github": "https://github.com/Billyjameshowell/wizards-107p-cf",
     "githubPrivate": false,
     "created": "2026-09-11",
-    "updated": "2026-09-22",
+    "updated": "2026-09-28",
     "dateSource": "github",
     "stack": [
       "TypeScript",
@@ -458,12 +458,20 @@
       "Cloudflare Workers",
       "Cloudflare D1"
     ],
-    "status": "dev",
-    "notes": "Season ticket book (sit/sell, advised asks, listed/sold). Primary public repo wizards-107p-cf created 2026-09-11, pushed 2026-09-22. No custom domain: pages.dev variants were DNS NXDOMAIN on the 2026-09-24 probe, so the primary URL stays empty. Workers preview returned 200. Legacy private repo wizards-107p is under more links. Status dev.",
+    "status": "shipped",
+    "notes": "Live Cap One Arena Sec 107 Row P season ticket book (sit/sell, advised asks, what-if scenario). Primary live URL is the Cloudflare Worker (no custom domain). Repo main has PR #2 (mobile) and PR #4 (sort/zoom/get-in/median/Admin/what-if) merged 2026-09-28; PR #3 (spend/seed) closed stale the same day (seed already ran on live). Book: 40/43 homes with asks; still blank Mar 6 Jazz, Mar 24 Nuggets, Mar 31 Bulls (SeatData has no events yet). Sell-book cash ≈ $4.8k vs $6k season cost. List nothing until Billy says so. Daily Wizards prices routine still paused. Legacy Vercel book and private repo under more links.",
     "extraLinks": [
       {
-        "label": "Workers preview",
-        "url": "https://wizards-107p-cf.dfm7gb44c6.workers.dev"
+        "label": "Admin status",
+        "url": "https://wizards-107p-cf.dfm7gb44c6.workers.dev/admin"
+      },
+      {
+        "label": "GitHub repo",
+        "url": "https://github.com/Billyjameshowell/wizards-107p-cf"
+      },
+      {
+        "label": "Legacy Vercel book",
+        "url": "https://wizards-107p.vercel.app"
       },
       {
         "label": "Legacy repo (private)",
