@@ -445,7 +445,7 @@
   {
     "slug": "wizards-107p",
     "name": "Wizards 107P",
-    "url": null,
+    "url": "https://wizards-107p-cf.dfm7gb44c6.workers.dev",
     "github": "https://github.com/Billyjameshowell/wizards-107p-cf",
     "githubPrivate": false,
     "created": "2026-09-11",
@@ -458,8 +458,8 @@
       "Cloudflare Workers",
       "Cloudflare D1"
     ],
-    "status": "dev",
-    "notes": "Season ticket book (sit/sell, advised asks, listed/sold). Primary public repo wizards-107p-cf created 2026-09-11, pushed 2026-09-22. No custom domain: pages.dev variants were DNS NXDOMAIN on the 2026-09-24 probe, so the primary URL stays empty. Workers preview returned 200. Legacy private repo wizards-107p is under more links. Status dev.",
+    "status": "shipped",
+    "notes": "Season ticket book (sit/sell, advised asks, listed/sold). Primary public repo wizards-107p-cf created 2026-09-11, pushed 2026-09-22. Live public URL: Workers deploy at wizards-107p-cf.dfm7gb44c6.workers.dev (HTTP 200, no auth). Legacy private repo wizards-107p is under more links.",
     "extraLinks": [
       {
         "label": "Workers preview",

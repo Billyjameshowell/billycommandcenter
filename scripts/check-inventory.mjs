@@ -62,8 +62,8 @@ const shipped = rows.filter((r) => r.status === "shipped").length;
 const dev = rows.filter((r) => r.status === "dev").length;
 const broken = rows.filter((r) => r.status === "broken").length;
 assert.equal(shipped + dev + broken, 24);
-assert.equal(dev, 6);
-assert.equal(shipped, 18);
+assert.equal(dev, 5);
+assert.equal(shipped, 19);
 
 function sortBy(list, key, dir) {
   return [...list].sort((a, b) => {
