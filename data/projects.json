@@ -130,15 +130,11 @@
       "Fly.io"
     ],
     "status": "shipped",
-    "notes": "Live title: \u201c0/52 \u2014 One photo per week\u201d. Fly.io app (`oneper` / xzyp6ge.oneper.fly.dev and oneper.fly.dev). No public GitHub repo named 52grid (or oneper) under Billyjameshowell. Created/updated dates unverified \u2014 no GitHub `created_at`/`pushed_at` and no HTTP Last-Modified.",
+    "notes": "The live title is \u201c0/52 \u2014 One photo per week\u201d. The Fly.io app is oneper, and its public host is oneper.fly.dev. No public GitHub repo named 52grid or oneper exists under Billyjameshowell. Created and updated dates are unverified, because there is no GitHub created_at or pushed_at and no HTTP Last-Modified.",
     "extraLinks": [
       {
         "label": "Fly (oneper)",
         "url": "https://oneper.fly.dev"
-      },
-      {
-        "label": "Fly machine host",
-        "url": "https://xzyp6ge.oneper.fly.dev"
       }
     ]
   },
@@ -254,8 +250,8 @@
       "Google Frontend",
       "Replit"
     ],
-    "status": "shipped",
-    "notes": "Student-athlete commitment graphics. Live headers: Google Frontend + Express. Replit heritage (`replit.com/@billyjhowell/CommitmentGraphics`). Private repo created 2025-08-21, last GitHub push 2025-08-21. HTTP Last-Modified Wed, 03 Sep 2025 02:53:28 GMT used for last modified.",
+    "status": "broken",
+    "notes": "Commitment Graphics makes student-athlete commitment graphics. Earlier probes showed Google Frontend and Express headers, and the Replit heritage app is at replit.com/@billyjhowell/CommitmentGraphics. The private repo was created on 2025-08-21, and the last GitHub push was on 2025-08-21. The HTTP Last-Modified value of Wed, 03 Sep 2025 02:53:28 GMT is used for last modified. commitmentgraphics.com now returns 404, so this entry is marked broken.",
     "extraLinks": []
   },
   {
@@ -346,8 +342,8 @@
       "Express",
       "Google Frontend"
     ],
-    "status": "shipped",
-    "notes": "Probed 200. Headers: Google Frontend + `x-powered-by: Express`. HTML is a Vite-built SPA (`/assets/index-*.js`). HTTP Last-Modified Fri, 14 Mar 2025 17:43:48 GMT. No GitHub repo named generate-recipes found. Created date unverified.",
+    "status": "broken",
+    "notes": "An earlier probe returned 200, with Google Frontend and an Express x-powered-by header. The HTML is a Vite-built SPA served from /assets/index-*.js. The HTTP Last-Modified header was Fri, 14 Mar 2025 17:43:48 GMT. No GitHub repo named generate-recipes was found, and the created date is unverified. generate-recipes.com now returns 404, so this entry is marked broken.",
     "extraLinks": []
   },
   {
@@ -445,7 +441,7 @@
   {
     "slug": "wizards-107p",
     "name": "Wizards 107P",
-    "url": "https://wizards-107p-cf.dfm7gb44c6.workers.dev",
+    "url": "https://wizards.billycommandcenter.com/",
     "github": "https://github.com/Billyjameshowell/wizards-107p-cf",
     "githubPrivate": false,
     "created": "2026-09-11",
@@ -459,11 +455,11 @@
       "Cloudflare D1"
     ],
     "status": "shipped",
-    "notes": "Season ticket book (sit/sell, advised asks, listed/sold). Primary public repo wizards-107p-cf created 2026-09-11, pushed 2026-09-22. Live public URL: Workers deploy at wizards-107p-cf.dfm7gb44c6.workers.dev (HTTP 200, no auth). Legacy private repo wizards-107p is under more links.",
+    "notes": "Wizards 107P is a season ticket book for choosing whether to sit or sell, reviewing advised asks, and tracking seats that are listed or sold. The primary public repo wizards-107p-cf was created on 2026-09-11 and last pushed on 2026-09-22. The live public address is now https://wizards.billycommandcenter.com/. The legacy private repo wizards-107p is listed with the other links.",
     "extraLinks": [
       {
-        "label": "Workers preview",
-        "url": "https://wizards-107p-cf.dfm7gb44c6.workers.dev"
+        "label": "Custom domain",
+        "url": "https://wizards.billycommandcenter.com/"
       },
       {
         "label": "Legacy repo (private)",
