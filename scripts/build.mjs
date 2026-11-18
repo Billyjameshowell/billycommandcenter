@@ -117,6 +117,7 @@ function layout({ title, description, extraHead = "", bodyClass = "", main }) {
   <meta name="description" content="${esc(description)}">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/AlloVariable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
   ${extraHead}
 </head>
