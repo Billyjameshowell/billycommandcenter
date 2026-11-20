@@ -2,10 +2,12 @@
 
 Public index of Billy’s live sites: URLs, GitHub, created/modified dates, status, and per-project stack notes.
 
-**This is not Astro.** There is no framework. The site is **static HTML + CSS**. A small Node script (`scripts/build.mjs`) reads `data/projects.json` and writes `index.html` plus `projects/<slug>.html`. Client filter/sort lives in `inventory.js`. Cloudflare Pages serves those files as-is from the repo root.
+**This is not Astro.** There is no framework. The site is **static HTML + CSS**. A small Node script (`scripts/build.mjs`) reads `data/projects.json` and writes `index.html` plus `projects/<slug>.html`. Client filter/sort lives in `inventory.js`. Vercel serves those files from the repo after `npm run build`. A push to `main` deploys the live site. Do not merge to `main` unless Billy has said to ship.
 
-- **Domain:** [billycommandcenter.com](https://billycommandcenter.com) (connect in Cloudflare Pages; this repo does not change DNS)
-- **Host:** Cloudflare Pages
+The `_headers` file is kept for a Cloudflare Pages rollback. It is not how production ships today.
+
+- **Domain:** [billycommandcenter.com](https://billycommandcenter.com)
+- **Host:** Vercel (owexlabs team). The previous Cloudflare Pages project is left in place as rollback.
 - **Stack:** static HTML + CSS generated from `data/projects.json` via `node scripts/build.mjs`
 
 ## Layout
@@ -65,18 +67,18 @@ node scripts/build.mjs
 # or: npm run build
 ```
 
-The script overwrites `index.html` and every `projects/*.html`. Commit both the JSON and the generated HTML so Pages can deploy even if the build command is skipped.
+The script overwrites `index.html` and every `projects/*.html`. Commit both the JSON and the generated HTML so the host can deploy even if the build command is skipped.
 
-## Deploy to Cloudflare Pages
+## Deploy
 
-1. In Cloudflare: **Workers & Pages → Create → Pages → Connect to Git**
-2. Select `Billyjameshowell/billycommandcenter`, production branch `main`
-3. Build settings:
-   - **Build command:** `node scripts/build.mjs`
-   - **Output directory:** `/` (project root — leave empty if the UI requires a blank root)
-4. Save and deploy. Optional: attach `billycommandcenter.com` as a custom domain in the Pages project (do this in the dashboard; don’t change DNS from this repo).
+Production is on Vercel, connected to `Billyjameshowell/billycommandcenter`, production branch `main`.
+
+- **Build command:** `npm run build` (`node scripts/build.mjs`)
+- **Output directory:** `.` (repo root), as set in `vercel.json`
 
 Local preview after build: any static server from the repo root, e.g. `python3 -m http.server 4173`.
+
+To roll back to the previous Cloudflare Pages project, leave that project in place and point the domain back. Do not change DNS from this repo.
 
 ## FUTURE: refresh Action / cron
 
@@ -89,7 +91,7 @@ Ideal next step: a GitHub Action (schedule + `workflow_dispatch`, plus optional 
 3. Optionally `HEAD`/`GET` each live URL and, when `Last-Modified` is present, prefer that instant for `updated` (`dateSource`: `http` or `mixed`)
 4. Leaves dates `null` / `dateSource: unverified` when neither source exists
 5. Runs `node scripts/build.mjs`
-6. Commits the JSON + generated HTML (or opens a PR) and lets Cloudflare Pages rebuild from `main`
+6. Commits the JSON + generated HTML (or opens a PR) and lets Vercel rebuild from `main`
 
 Notes for that Action:
 
