@@ -92,7 +92,7 @@ assert.match(css, /\.is-out/);
 assert.match(css, /display:\s*none\s*!important/);
 assert.doesNotMatch(css, /#c6e04a/);
 assert.doesNotMatch(css, /#0b0e0c/);
-assert.match(css, /background:\s*#fff/);
+assert.match(css, /--paper: #f7f6f3/);
 
 assert.match(js, /localStorage/);
 assert.match(js, /data-rows/);
