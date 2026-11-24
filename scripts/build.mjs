@@ -107,7 +107,11 @@ function counts(projects) {
   return c;
 }
 
-function layout({ title, description, extraHead = "", bodyClass = "", main }) {
+const SITE = "https://billycommandcenter.com";
+const SHARE_IMAGE = `${SITE}/og.jpg`;
+
+function layout({ title, description, path = "/", extraHead = "", bodyClass = "", main }) {
+  const canonical = new URL(path, SITE).href;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,7 +119,21 @@ function layout({ title, description, extraHead = "", bodyClass = "", main }) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f7f6f3">
+  <link rel="canonical" href="${esc(canonical)}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Billy Command Center">
+  <meta property="og:url" content="${esc(canonical)}">
+  <meta property="og:title" content="${esc(title)}">
+  <meta property="og:description" content="${esc(description)}">
+  <meta property="og:image" content="${SHARE_IMAGE}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Billy Command Center">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${esc(title)}">
+  <meta name="twitter:description" content="${esc(description)}">
+  <meta name="twitter:image" content="${SHARE_IMAGE}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/AlloVariable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
@@ -126,7 +144,6 @@ function layout({ title, description, extraHead = "", bodyClass = "", main }) {
   <div class="shell">
     <header class="top">
       <p class="brand"><a href="/">Billy Command Center</a></p>
-      <p class="kicker">billycommandcenter.com</p>
       <h1>Site inventory</h1>
       <p class="lede">Personal index of sites and tools. Status is <code>shipped</code>, <code>dev</code>, or <code>broken</code>. Dates prefer GitHub <code>created_at</code>/<code>pushed_at</code> when HTTP <code>Last-Modified</code> is missing.</p>
     </header>
@@ -135,7 +152,7 @@ ${main}
     </main>
     <footer class="foot">
       <p>Not Astro. Static HTML + CSS generated from <code>data/projects.json</code> by <code>scripts/build.mjs</code>. Do not edit HTML by hand.</p>
-      <p><a href="https://github.com/Billyjameshowell/billycommandcenter">Source</a> · Cloudflare Pages · public</p>
+      <p><a href="https://github.com/Billyjameshowell/billycommandcenter">Source</a> · Vercel · public</p>
     </footer>
   </div>
 </body>
@@ -161,10 +178,10 @@ function renderIndex(projects) {
   const rows = sorted
     .map((p, i) => {
       const live = p.url
-        ? `<a href="${esc(p.url)}" rel="noopener">${esc(hostLabel(p.url))}</a>`
+        ? `<a href="${esc(p.url)}" rel="noopener noreferrer">${esc(hostLabel(p.url))}</a>`
         : `<span class="muted">no public URL</span>`;
       const gh = p.github
-        ? `<a href="${esc(p.github)}" rel="noopener">${esc(githubLabel(p.github))}${p.githubPrivate ? ` <span class="lock" title="private repo">priv</span>` : ""}</a>`
+        ? `<a href="${esc(p.github)}" rel="noopener noreferrer">${esc(githubLabel(p.github))}${p.githubPrivate ? ` <span class="lock" title="private repo">priv</span>` : ""}</a>`
         : `<span class="muted">—</span>`;
       return `<tr ${itemAttrs(p, i)}>
   <td class="col-name"><a href="/projects/${esc(p.slug)}.html">${esc(p.name)}</a></td>
@@ -182,10 +199,10 @@ function renderIndex(projects) {
   const cards = sorted
     .map((p, i) => {
       const live = p.url
-        ? `<a href="${esc(p.url)}" rel="noopener">${esc(hostLabel(p.url))}</a>`
+        ? `<a href="${esc(p.url)}" rel="noopener noreferrer">${esc(hostLabel(p.url))}</a>`
         : `<span class="muted">no public URL</span>`;
       const gh = p.github
-        ? `<a href="${esc(p.github)}" rel="noopener">${esc(githubLabel(p.github))}</a>${p.githubPrivate ? ` <span class="lock">priv</span>` : ""}`
+        ? `<a href="${esc(p.github)}" rel="noopener noreferrer">${esc(githubLabel(p.github))}</a>${p.githubPrivate ? ` <span class="lock">priv</span>` : ""}`
         : `<span class="muted">no GitHub</span>`;
       return `<article class="card" ${itemAttrs(p, i)}>
   <header>
@@ -242,7 +259,7 @@ ${filters}
                 <th>Created</th>
                 <th>Modified</th>
                 <th>Stack</th>
-                <th></th>
+                <th>Details</th>
               </tr>
             </thead>
             <tbody data-rows>
@@ -258,6 +275,7 @@ ${cards}
   return layout({
     title: "Billy Command Center",
     description: "Index of Billy’s live sites, GitHub repos, dates, and stacks.",
+    path: "/",
     bodyClass: "page-index",
     extraHead: `<script src="/inventory.js" defer></script>`,
     main,
@@ -266,22 +284,21 @@ ${cards}
 
 function renderDetail(p) {
   const live = p.url
-    ? `<a href="${esc(p.url)}" rel="noopener">${esc(p.url)}</a>`
+    ? `<a href="${esc(p.url)}" rel="noopener noreferrer">${esc(p.url)}</a>`
     : `<span class="muted">No public URL</span>`;
   const ghBadge = p.githubPrivate
     ? ` <span class="lock">private</span>`
     : ` <span class="chip">public</span>`;
   const gh = p.github
-    ? `<a href="${esc(p.github)}" rel="noopener">${esc(p.github)}</a>${ghBadge}`
+    ? `<a href="${esc(p.github)}" rel="noopener noreferrer">${esc(p.github)}</a>${ghBadge}`
     : `<span class="muted">None on file</span>`;
   const extras = (p.extraLinks || [])
-    .map((l) => `<li><a href="${esc(l.url)}" rel="noopener">${esc(l.label)}</a> <span class="muted">${esc(hostLabel(l.url))}</span></li>`)
+    .map((l) => `<li><a href="${esc(l.url)}" rel="noopener noreferrer">${esc(l.label)}</a> <span class="muted">${esc(hostLabel(l.url))}</span></li>`)
     .join("");
 
   const main = `      <nav class="crumb"><a href="/">← Inventory</a></nav>
       <article class="detail">
         <header class="detail-head">
-          <p class="kicker">${esc(p.slug)}</p>
           <h2>${esc(p.name)}</h2>
           ${statusBadge(p.status)}
         </header>
@@ -330,7 +347,7 @@ function renderDetail(p) {
     title: `${p.name} · Billy Command Center`,
     description: p.notes || `${p.name} stack and links`,
     bodyClass: "page-detail",
-    extraHead: `<link rel="canonical" href="/projects/${esc(p.slug)}.html">`,
+    path: `/projects/${p.slug}.html`,
     main,
   });
 }

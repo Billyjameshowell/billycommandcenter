@@ -6,15 +6,15 @@
     "github": "https://github.com/Billyjameshowell/billycommandcenter",
     "githubPrivate": false,
     "created": "2026-09-09",
-    "updated": "2026-09-25",
+    "updated": "2026-11-18",
     "dateSource": "github",
     "stack": [
       "static HTML",
       "Node build script",
-      "Cloudflare Pages"
+      "Vercel"
     ],
     "status": "shipped",
-    "notes": "This index. Public repo. Live on CF Pages (probed 200). Cloudflare Pages serves repo-root HTML after node scripts/build.mjs.",
+    "notes": "This index. Public repo. Live on Vercel (owexlabs team) after the OWEX-337 move; the old Cloudflare Pages project is kept for rollback. Repo created 2026-09-09, last pushed 2026-11-18.",
     "extraLinks": []
   },
   {
@@ -24,15 +24,15 @@
     "github": "https://github.com/Billyjameshowell/contactbilly",
     "githubPrivate": true,
     "created": "2026-08-19",
-    "updated": "2026-08-29",
+    "updated": "2026-11-19",
     "dateSource": "github",
     "stack": [
       "Astro",
-      "Cloudflare Worker",
+      "Vercel",
       "GitHub"
     ],
     "status": "shipped",
-    "notes": "Booking / consulting site. Probed 200 on Cloudflare (Astro v7.2.4). Private repo `contactbilly` created 2026-08-19, pushed 2026-08-29. HTTP Last-Modified not exposed.",
+    "notes": "Booking site. Moved to Vercel (owexlabs team) from a Cloudflare Worker; wrangler.toml is kept for rollback. Private repo `contactbilly` created 2026-08-19, last pushed 2026-11-19.",
     "extraLinks": []
   },
   {
@@ -142,18 +142,18 @@
     "slug": "owexlabs",
     "name": "Owex Labs",
     "url": "https://owexlabs.com",
-    "github": "https://github.com/Billyjameshowell/owexlabs",
-    "githubPrivate": false,
-    "created": null,
+    "github": "https://github.com/Billyjameshowell/owex-labs-site",
+    "githubPrivate": true,
+    "created": "2026-10-08",
     "updated": "2024-12-12",
-    "dateSource": "http",
+    "dateSource": "mixed",
     "stack": [
       "Vite",
       "React",
       "Fly.io"
     ],
     "status": "shipped",
-    "notes": "Shipped but stale: live marketing SPA on Fly (owex-labs.fly.dev). HTTP Last-Modified Thu, 12 Dec 2024 00:35:19 GMT. Linked public repo owexlabs is an older Astro lander (created 2023-09-21), not this Fly deploy. Monthly brief preview is a separate dev project (owexlabs-brief).",
+    "notes": "Live marketing site on Fly (owex-labs). Private repo is `owex-labs-site` (Vite, React, Chakra), created 2026-10-08. The live Fly deploy is older: HTTP Last-Modified Thu, 12 Dec 2024 00:35:19 GMT, used for last modified. Open PRs add an About page, a /brief product page, and a share image; those are unmerged and not on the live domain yet. The older public `owexlabs` repo is a retired Astro lander and is not this site. Monthly brief preview is a separate dev project (owexlabs-brief).",
     "extraLinks": [
       {
         "label": "Fly app",
